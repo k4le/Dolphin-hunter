@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8419631616799103629}
   - component: {fileID: 8419631616799103628}
   - component: {fileID: 8419631616799103631}
+  - component: {fileID: 605381068}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -97,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81de6428da45f84084e2b488bc25618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oxygen: 100
   gravity: 3
   water_gravity: -1
+  movement_Speed: 2000
 --- !u!50 &8419631616799103631
 Rigidbody2D:
   serializedVersion: 4
@@ -121,3 +122,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &605381068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419631616799103630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac11824ebc952f4d9c90729626996a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oxygen: 100
+  oxygen_consumption: 15
