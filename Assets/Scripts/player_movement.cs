@@ -38,15 +38,15 @@ public class player_movement : MonoBehaviour
 
         if (Input.GetMouseButton(0) && transform.position.y < 0)
         {
-            rb.AddForce(mouseDir * 10, ForceMode2D.Force);
+            rb.AddForce(mouseDir * 1000f * Time.deltaTime, ForceMode2D.Force);
         }
 
         if (rb.velocity.y > 0) 
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, -Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 4f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, -Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 9f);
         } else
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 180.0f - Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 4f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 180.0f - Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 9f);
         }
     }
 
