@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 550670111802053197}
   - component: {fileID: 550670111802053196}
   - component: {fileID: -5056135239611480954}
+  - component: {fileID: 3567323911929110418}
+  - component: {fileID: 3453795480165967147}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -96,4 +98,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddae2769f4c6f7344803a2b3ea88d332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  movementSpeed: 31003800000000000000000000000000000000000000000000000000
+--- !u!70 &3567323911929110418
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550670111802053199}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.035944205, y: -0.18508425}
+  m_Size: {x: 1.4493948, y: 0.75932324}
+  m_Direction: 1
+--- !u!114 &3453795480165967147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550670111802053199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378bbf653975dd94592fd114744144b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
