@@ -4,29 +4,25 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
-    [SerializeField] float oxygen = 100.0f;
     [SerializeField] float gravity = 3.0f;
     [SerializeField] float water_gravity = 1.0f;
+    [SerializeField] float movement_Speed = 2000;
 
     private Rigidbody2D rb;
     Vector3 velocity;
 
     private void Start()
     {
-        oxygen = 100.0f;
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
         if (transform.position.y < 0)
         {
-            oxygen -= 20.0f * Time.deltaTime;
-
             rb.gravityScale = water_gravity;
         }
         else
         {
-            oxygen = 100;
             rb.gravityScale = gravity;
         }
 
@@ -38,15 +34,17 @@ public class player_movement : MonoBehaviour
 
         if (Input.GetMouseButton(0) && transform.position.y < 0)
         {
-            rb.AddForce(mouseDir * 1000f * Time.deltaTime, ForceMode2D.Force);
+            rb.AddForce(mouseDir * movement_Speed * Time.deltaTime, ForceMode2D.Force);
+
         }
 
         if (rb.velocity.y > 0) 
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, -Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 9f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, -Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 10f);
         } else
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 180.0f - Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 9f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 180.0f - Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 10f);
+
         }
     }
 
