@@ -40,10 +40,10 @@ public class player_movement : MonoBehaviour
 
         if (rb.velocity.y > 0) 
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, -Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 10f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f,90.0f -Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 10f);
         } else
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 180.0f - Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 10f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 270.0f - Mathf.Atan(rb.velocity.x / rb.velocity.y) * Mathf.Rad2Deg), Time.deltaTime * 10f);
 
         }
     }
