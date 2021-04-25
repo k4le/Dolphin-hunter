@@ -14,8 +14,11 @@ public class checkPlayer : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.gameObject.tag == "Player") {
-			
-			transform.position += new Vector3(200.0f, 0.0f, 0.0f);
+			int dir = Random.Range(0, 2);
+			if (dir == 0) {
+				dir = -1;
+			}
+			transform.position += new Vector3(Random.Range(100, 200) * dir, 0.0f, 0.0f);
 		}
 	}
 }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class player_movement : MonoBehaviour
+
 {
 	[SerializeField] float gravity = 3.0f;
 	[SerializeField] float water_gravity = 1.0f;
 	[SerializeField] float movement_Speed = 2000;
 
 	private SpriteRenderer spriteRenderer;
+	public GameObject gameManager;
 
 	private Rigidbody2D rb;
 	Vector3 velocity;
@@ -53,4 +55,11 @@ public class player_movement : MonoBehaviour
 		}
 	}
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            gameManager.GetComponent<Game_manager>().OnEndOfGame();
+        }
+    }
 }
