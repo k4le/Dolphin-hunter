@@ -22,15 +22,17 @@ public class Game_manager : MonoBehaviour
     }
 	
 	public void OnEndOfGame()
-    {
 
-        if (newScore > highScore) {
-            highScore = newScore;
-        }
-        SaveScores();
-        menu.ActivateGameOverScreen();
+	{
 
-    }
+		if (newScore > highScore) {
+			highScore = newScore;
+		}
+		SaveScores();
+		menu.ActivateGameOverScreen();
+
+	}
+
 
     internal void updateScore(int v)
     {
@@ -45,6 +47,7 @@ public class Game_manager : MonoBehaviour
 
     void LoadScores()
     {
+
         newScore = PlayerPrefs.GetInt("newScore");
         highScore = PlayerPrefs.GetInt("highScore");
 
