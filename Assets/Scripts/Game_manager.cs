@@ -15,6 +15,7 @@ public class Game_manager : MonoBehaviour
 
 		newScoreObject = GameObject.FindGameObjectWithTag("newScore");
 		hightScoreObject = GameObject.FindGameObjectWithTag("highScore");
+		GameObject.Find("MusicManager").GetComponent<MusicManager>().playMusic("GameMusic2");
 	}
 	public void OnEndOfGame()
 	{
