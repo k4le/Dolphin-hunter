@@ -2270,10 +2270,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishAmount: 500
-  rangeX: 1000
+  rangeX: 550
   rangeY: 150
+  scalingMultiplier: 1.8
   fishPrefab:
-  - {fileID: 550670111802053199, guid: 90843f2382b04b34687ebc8a525e5f54, type: 3}
+  - {fileID: 1162754863186744027, guid: 2b37e20048ec49940b399c54dee164b4, type: 3}
+  - {fileID: 4237330668531588883, guid: de3d1e8378a6f264094da61a248e5f0c, type: 3}
   - {fileID: 4846015517532301095, guid: 0124fdfab2b77d043a20494977d668ba, type: 3}
   - {fileID: 4933680607037710518, guid: 34494378eea817e418ed5e25cc5305b3, type: 3}
 --- !u!4 &2100210727
@@ -2319,7 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceBetweenSpawnpoints: 25
-  rangeX: 1000
+  rangeX: 550
   rangeY: 150
   enemyPrefab: {fileID: 6758962580400208712, guid: 6022ad99a1999d6419d89a66fa6bd3fe, type: 3}
 --- !u!1 &2113029130
