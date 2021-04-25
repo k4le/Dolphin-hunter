@@ -6,7 +6,7 @@ public class Game_manager : MonoBehaviour
 {
 	GameObject newScoreObject;
 	GameObject hightScoreObject;
-	GameObject currentScoreObject;
+	public GameObject currentScoreObject;
 
 	public int highScore = 0;
 	public int newScore = 0;
@@ -16,7 +16,7 @@ public class Game_manager : MonoBehaviour
 		LoadScores();
 		newScoreObject = GameObject.FindGameObjectWithTag("newScore");
 		hightScoreObject = GameObject.FindGameObjectWithTag("highScore");
-		currentScoreObject = GameObject.FindGameObjectWithTag("currentScore");
+		//currentScoreObject = GameObject.FindGameObjectWithTag("currentScore");
 		newScoreObject.GetComponent<Text>().text = newScore.ToString();
 		hightScoreObject.GetComponent<Text>().text = highScore.ToString();
 	}
