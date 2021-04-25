@@ -14,7 +14,8 @@ public class checkPlayer : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.gameObject.tag == "Player") {
-			Destroy(gameObject);
+			
+			transform.position += new Vector3(200.0f, 0.0f, 0.0f);
 		}
 	}
 }
