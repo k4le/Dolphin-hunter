@@ -19,6 +19,7 @@ public class player_movement : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+		gameManager = GameObject.FindWithTag("GameController");
 	}
 	void Update()
 	{

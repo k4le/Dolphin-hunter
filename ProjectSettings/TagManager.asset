@@ -5,9 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+<<<<<<< HEAD
   - gameManager
   - newScore
   - highScore
+=======
+>>>>>>> 2bb16237fc49fc24b02a1df5db2c2bf672e14d2f
   layers:
   - Default
   - TransparentFX
