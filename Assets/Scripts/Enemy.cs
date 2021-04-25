@@ -112,6 +112,15 @@ public class Enemy : MonoBehaviour
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        if (angle < 90 && angle < 270)
+        {
+            //sDebug.Log("asdasd");
+            spriteRenderer.flipY = false;
+        }
+        else
+        {
+            spriteRenderer.flipY = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -125,13 +134,6 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if (angle < 90 && angle < 270)
-        {
-            //sDebug.Log("asdasd");
-            spriteRenderer.flipY = false;
-        }else
-        {
-            spriteRenderer.flipY = true;
-        }
+
     }
 }
