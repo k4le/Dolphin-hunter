@@ -6,14 +6,18 @@ public class player_oxygen : MonoBehaviour
 {
     GameObject gameController;
     public float oxygen = 100.0f;
+    float max_oxygen;
     [SerializeField] float oxygen_consumption = 15;
     Slider slider;
+    Image bubbles;
     
     void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController");
         slider = GameObject.Find("OxygenBar").GetComponent<Slider>();
+        bubbles = GameObject.Find("OxygenBubbles").GetComponent<Image>();
         oxygen = 100.0f;
+        max_oxygen = oxygen;
     }
 
     // Update is called once per frame
@@ -29,6 +33,7 @@ public class player_oxygen : MonoBehaviour
         }
 
         slider.value = oxygen;
+        bubbles.fillAmount = oxygen / max_oxygen;
 
         if (oxygen <= 0)
         {
