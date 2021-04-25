@@ -19,7 +19,7 @@ public class player_movement : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-		gameManager = GameObject.FindWithTag("GameController");
+		gameManager = GameObject.FindGameObjectWithTag("gameManager");
 	}
 	void Update()
 	{
@@ -58,9 +58,10 @@ public class player_movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+		
         if (collision.gameObject.tag == "Enemy")
-        {
-            gameManager.GetComponent<Game_manager>().OnEndOfGame();
+		{ 
+			gameManager.GetComponent<Game_manager>().OnEndOfGame();
         }
     }
 }

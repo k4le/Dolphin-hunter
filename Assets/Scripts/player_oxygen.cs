@@ -15,7 +15,7 @@ public class player_oxygen : MonoBehaviour
     
     void Start()
     {
-        gameController = GameObject.FindGameObjectWithTag("GameController");
+        gameController = GameObject.FindGameObjectWithTag("gameManager");
         slider = GameObject.Find("OxygenBar").GetComponent<Slider>();
         bubbles = GameObject.Find("OxygenBubbles").GetComponent<Image>();
         oxygen = 100.0f;

@@ -23,7 +23,7 @@ public class Game_manager : MonoBehaviour
 			highScore = newScore;
 			hightScoreObject.GetComponent<Text>().text = newScore.ToString();
 		}
-		// Application.LoadLevel(Application.loadedLevel);
+		Application.LoadLevel(Application.loadedLevel);
 		newScoreObject.GetComponent<Text>().text = "0";
 		newScore = 0;
 	}
