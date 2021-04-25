@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("gameManager");
         Time.timeScale = 0f;
         gameOver.SetActive(false);
+        hud.enabled = false;
 
     }
 
