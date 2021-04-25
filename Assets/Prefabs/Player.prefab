@@ -103,6 +103,7 @@ MonoBehaviour:
   gravity: 3
   water_gravity: 0
   movement_Speed: 2000
+  gameManager: {fileID: 0}
 --- !u!50 &8419631616799103631
 Rigidbody2D:
   serializedVersion: 4

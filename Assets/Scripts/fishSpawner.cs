@@ -9,8 +9,6 @@ public class fishSpawner : MonoBehaviour
 	public int rangeY;
 	public GameObject[] fishPrefab;
 
-
-	// Start is called before the first frame update
 	void Start()
 	{
 		for (int i = 0; i < fishAmount; i++) {
@@ -18,11 +16,5 @@ public class fishSpawner : MonoBehaviour
 			float scaling = Mathf.Abs(fish.transform.position.y) / rangeY;
 			fish.transform.localScale *= (1 + scaling);
 		}
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
 	}
 }

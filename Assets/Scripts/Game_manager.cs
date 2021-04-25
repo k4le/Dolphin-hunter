@@ -1,23 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Game_manager : MonoBehaviour
 {
-    private int score;
+	GameObject newScoreObject;
+	GameObject hightScoreObject;
 
-    private void Start()
-    {
-        score = 0;
-    }
+	public int highScore = 0;
+	public int newScore = 0;
 
-    public void addScore(int amount)
-    {
-        score += amount;
-    }
+	void Start()
+	{
 
-    public void OnEndOfGame()
-    {
-        Application.LoadLevel(Application.loadedLevel);
-    }
+		newScoreObject = GameObject.FindGameObjectWithTag("newScore");
+		hightScoreObject = GameObject.FindGameObjectWithTag("highScore");
+	}
+	public void OnEndOfGame()
+	{
+		newScoreObject.GetComponent<Text>().text = newScore.ToString();
+		if (newScore > highScore) {
+			highScore = newScore;
+			hightScoreObject.GetComponent<Text>().text = newScore.ToString();
+		}
+		// Application.LoadLevel(Application.loadedLevel);
+		newScoreObject.GetComponent<Text>().text = "0";
+		newScore = 0;
+	}
+
+	internal void updateScore(int v)
+	{
+		newScore += v;
+		Debug.Log(newScore);
+	}
 }
