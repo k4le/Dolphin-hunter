@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private int dir;
     [SerializeField] float sightRange;
-
+    private SpriteRenderer spriteRenderer;
     private float movementSpeedFloat;
     public char[] movementSpeed;
 
@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
         
         movementSpeedFloat = Random.Range((int)movementSpeed[0] - 48, (int)movementSpeed[1] - 48);
@@ -40,14 +41,28 @@ public class Enemy : MonoBehaviour
             status = EnemyStatus.follow_player;
         }else if (status == EnemyStatus.follow_player)
         {
-            Wander();
+            int dir;
+            if (player.transform.position.x > transform.position.x)
+            {
+                dir = 1;
+            }else
+            {
+                dir = -1;
+            }
+            Wander(dir);
         }
     }
 
-    void Wander ()
+    void Wander(int direction = 0)
     {
         status = EnemyStatus.wander;
-        dir = Random.Range(0, 2);
+        if (direction == 0)
+        {
+            dir = Random.Range(0, 2);
+        } else {
+            dir = direction;
+        }
+
         if (dir == 0)
         {
             dir = -1;
@@ -57,7 +72,23 @@ public class Enemy : MonoBehaviour
     {
         if (status == EnemyStatus.wander)
         {
-            transform.position = new Vector3(transform.position.x + Time.deltaTime * movementSpeedFloat * dir, transform.position.y, 0.0f);
+           transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,0);
+            if (Vector3.Distance(player.GetComponent<Transform>().position, transform.position) < 200)
+            {
+                transform.position = new Vector3(transform.position.x + Time.deltaTime * movementSpeedFloat * dir, transform.position.y, 0.0f);
+            }
+            if (Vector3.Distance(player.GetComponent<Transform>().position, transform.position) > 200 && Vector3.Distance(player.GetComponent<Transform>().position, transform.position) < 110)
+            {
+                dir *= -1;
+                if (dir == -1)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else
+                {
+                    spriteRenderer.flipX = false;
+                }
+            }
         }
         if (status == EnemyStatus.follow_player)
         {

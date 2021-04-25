@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6758962580400208715}
   - component: {fileID: 417579980}
   - component: {fileID: 2443267493557141903}
+  - component: {fileID: 1478682028}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Enemy
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 924291278652750479, guid: 71399faa3cce9ec47b042daf27d7cf81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f773b144f7d87d4980819a2e1e7ed61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRange: 15
+  sightRange: 40
   movementSpeed: 31003800
   status: 0
 --- !u!70 &2443267493557141903
@@ -113,6 +114,25 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.6647449e-10, y: -0.0023274822}
-  m_Size: {x: 1.0000002, y: 0.9873996}
+  m_Offset: {x: 0.043350793, y: -0.06820072}
+  m_Size: {x: 1.826219, y: 0.66017866}
   m_Direction: 1
+--- !u!95 &1478682028
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758962580400208712}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d31e498597a389342a012c937e239bc1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
