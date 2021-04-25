@@ -104,6 +104,8 @@ MonoBehaviour:
   water_gravity: 0
   movement_Speed: 2000
   gameManager: {fileID: 0}
+  splashPrefab: {fileID: 8253631250624631448, guid: ad2843f5747ea95489c1c70c29d88152, type: 3}
+  splashPrefab2: {fileID: 8253631250624631448, guid: 0fd230fb31da3754190428d0cb011797, type: 3}
 --- !u!50 &8419631616799103631
 Rigidbody2D:
   serializedVersion: 4
@@ -139,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oxygen: 100
   oxygen_consumption: 15
+  oxygenRegen: 50
 --- !u!95 &652304
 Animator:
   serializedVersion: 3

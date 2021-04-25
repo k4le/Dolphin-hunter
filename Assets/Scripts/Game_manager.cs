@@ -31,6 +31,5 @@ public class Game_manager : MonoBehaviour
 	internal void updateScore(int v)
 	{
 		newScore += v;
-		Debug.Log(newScore);
 	}
 }

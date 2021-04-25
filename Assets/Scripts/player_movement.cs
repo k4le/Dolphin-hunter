@@ -11,8 +11,13 @@ public class player_movement : MonoBehaviour
 
 	private SpriteRenderer spriteRenderer;
 	public GameObject gameManager;
+	public GameObject splashPrefab;
+	public GameObject splashPrefab2;
 
 	private Rigidbody2D rb;
+
+	bool disableSplash = false;
+
 	Vector3 velocity;
 
 	private void Start()
@@ -23,13 +28,21 @@ public class player_movement : MonoBehaviour
 	}
 	void Update()
 	{
+		if (transform.position.y < -1 || transform.position.y > 1) {
+			disableSplash = false;
+		}
+
 		if (rb.velocity.x < 0) {
 			spriteRenderer.flipY = true;
 		} else {
 			spriteRenderer.flipY = false;
 		}
 
-
+		if (rb.velocity.y < 0 && transform.position.y < 0.1 && transform.position.y > -0.1 && !disableSplash) {
+			Instantiate(splashPrefab, new Vector3(transform.position.x, transform.position.y, -1.0f), Quaternion.Euler(-90.0f, 0.0f, 0.0f));
+			Instantiate(splashPrefab2, new Vector3(transform.position.x, transform.position.y, -1.0f), Quaternion.Euler(-90.0f, 0.0f, 0.0f));
+			disableSplash = true;
+		}
 
 		if (transform.position.y < 0) {
 			rb.gravityScale = water_gravity;
