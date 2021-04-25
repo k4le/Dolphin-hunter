@@ -37,4 +37,17 @@ public class fishMovement : MonoBehaviour
 			}
 		}
 	}
+	private void OnTriggerEnter2D(Collider2D collider)
+	{
+		if (collider.gameObject.tag == "wall") {
+			dir *= -1;
+			if (dir == -1) {
+				spriteRenderer.flipX = true;
+			} else {
+				spriteRenderer.flipX = false;
+			}
+		}
+	}
 }
+
+
