@@ -9,10 +9,12 @@ public class player_movement : MonoBehaviour
     [SerializeField] float movement_Speed = 2000;
 
     private Rigidbody2D rb;
+    GameObject gameManager;
     Vector3 velocity;
 
     private void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameController");
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
@@ -47,5 +49,11 @@ public class player_movement : MonoBehaviour
 
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            gameManager.GetComponent<Game_manager>().OnEndOfGame();
+        }
+    }
 }
