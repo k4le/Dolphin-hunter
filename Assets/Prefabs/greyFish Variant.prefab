@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &1521568317
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4237330668531588883}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 17a04fe94cfb01344a08958963c92575, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4425448842683698524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17,11 +36,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550670111802053197, guid: 90843f2382b04b34687ebc8a525e5f54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 269.65405
       objectReference: {fileID: 0}
     - target: {fileID: 550670111802053197, guid: 90843f2382b04b34687ebc8a525e5f54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -23.612803
       objectReference: {fileID: 0}
     - target: {fileID: 550670111802053197, guid: 90843f2382b04b34687ebc8a525e5f54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57,7 +76,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550670111802053199, guid: 90843f2382b04b34687ebc8a525e5f54, type: 3}
       propertyPath: m_Name
-      value: greyFish
+      value: greyFish Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90843f2382b04b34687ebc8a525e5f54, type: 3}
+--- !u!1 &4237330668531588883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 550670111802053199, guid: 90843f2382b04b34687ebc8a525e5f54, type: 3}
+  m_PrefabInstance: {fileID: 4425448842683698524}
+  m_PrefabAsset: {fileID: 0}
