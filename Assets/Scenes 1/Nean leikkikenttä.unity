@@ -814,7 +814,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5e52a75ad34e9714da8c4851687527c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f637b702e5d34ed42a8e0a44447f4332, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1807,7 +1807,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8304dc8019cfa7349a47cb476d258dd1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f5226ed062752d4e9fbea3af0086401, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2121,7 +2121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de277c213cc734449978988e019bafa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScoreObject: {fileID: 2113029130}
   menu: {fileID: 1334512415}
   highScore: 0
   newScore: 0
