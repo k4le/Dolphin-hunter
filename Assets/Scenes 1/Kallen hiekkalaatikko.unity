@@ -1470,6 +1470,7 @@ MonoBehaviour:
   rangeY: 40
   fishPrefab:
   - {fileID: 550670111802053199, guid: 90843f2382b04b34687ebc8a525e5f54, type: 3}
+  - {fileID: 6758962580400208712, guid: 6022ad99a1999d6419d89a66fa6bd3fe, type: 3}
 --- !u!4 &2100210727
 Transform:
   m_ObjectHideFlags: 0
