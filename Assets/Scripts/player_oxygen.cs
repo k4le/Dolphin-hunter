@@ -8,6 +8,7 @@ public class player_oxygen : MonoBehaviour
     public float oxygen = 100.0f;
     float max_oxygen;
     [SerializeField] float oxygen_consumption = 15;
+    [SerializeField] float oxygenRegen = 50;
     Slider slider;
     Image bubbles;
     
@@ -29,7 +30,11 @@ public class player_oxygen : MonoBehaviour
         }
         else
         {
-            oxygen = 100;
+            oxygen += oxygenRegen * Time.deltaTime;
+            if (oxygen > max_oxygen)
+            {
+                oxygen = max_oxygen;
+            }
         }
 
         slider.value = oxygen;
