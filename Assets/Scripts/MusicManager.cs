@@ -10,16 +10,15 @@ public class MusicManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Awake()
 	{
-		MainMenuMusic = Resources.Load<AudioClip>("blue_world_proud_music_preview");
-		GameMusic2 = Resources.Load<AudioClip>("Subverting_the_Water_Level");
-		GameMusic1 = Resources.Load<AudioClip>("information_age_proud_music");
+		MainMenuMusic = Resources.Load<AudioClip>("The World's Fair - Godmode");
+		GameMusic2 = Resources.Load<AudioClip>("Wehrmut - Godmode");
+		GameMusic1 = Resources.Load<AudioClip>("Wehrmut - Godmode");
 		audioSrc = GetComponent<AudioSource>();
 	}
 
 	public void playMusic(string clip)
 	{
-		Debug.Log("asdf");
-		audioSrc.volume = 0.07f;
+		audioSrc.volume = 0.1f;
 		switch (clip) {
 			case "GameMusic1":
 				audioSrc.clip = GameMusic1;

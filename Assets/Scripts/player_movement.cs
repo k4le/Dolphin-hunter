@@ -41,6 +41,7 @@ public class player_movement : MonoBehaviour
 		if (rb.velocity.y < 0 && transform.position.y < 0.1 && transform.position.y > -0.1 && !disableSplash) {
 			Instantiate(splashPrefab, new Vector3(transform.position.x, transform.position.y, -1.0f), Quaternion.Euler(-90.0f, 0.0f, 0.0f));
 			Instantiate(splashPrefab2, new Vector3(transform.position.x, transform.position.y, -1.0f), Quaternion.Euler(-90.0f, 0.0f, 0.0f));
+			AudioManagerSript.playSound("jumpSound");
 			disableSplash = true;
 		}
 
@@ -72,6 +73,7 @@ public class player_movement : MonoBehaviour
 	{
 
 		if (collision.gameObject.tag == "Enemy") {
+			AudioManagerSript.playSound("death");
 			gameManager.GetComponent<Game_manager>().OnEndOfGame();
 		}
 	}

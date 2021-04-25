@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         Time.timeScale = 1f;
-        Time.timeScale = 1f;
+        GameObject.Find("MusicManager").GetComponent<MusicManager>().playMusic("GameMusic1");
         menu.SetActive(false);
         gameManager.GetComponent<Game_manager>().newScore = 0;
         hud.enabled = true;

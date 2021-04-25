@@ -16,6 +16,7 @@ public class checkPlayer : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.gameObject.tag == "Player") {
+			AudioManagerSript.playSound("eat");
 			gameManager.GetComponent<Game_manager>().updateScore((int)Mathf.Abs(transform.position.y));
 			int dir = Random.Range(0, 2);
 			if (dir == 0) {

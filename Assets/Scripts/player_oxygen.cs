@@ -43,6 +43,7 @@ public class player_oxygen : MonoBehaviour
 
         if (oxygen <= 0)
         {
+            AudioManagerSript.playSound("death");
             gameController.GetComponent<Game_manager>().OnEndOfGame();
         }
     }

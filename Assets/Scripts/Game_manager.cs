@@ -19,6 +19,7 @@ public class Game_manager : MonoBehaviour
 
         newScoreObject.GetComponent<Text>().text = newScore.ToString();
         hightScoreObject.GetComponent<Text>().text = highScore.ToString();
+        GameObject.Find("MusicManager").GetComponent<MusicManager>().playMusic("MenuBackgroundMusic");
     }
 	
 	public void OnEndOfGame()
@@ -32,6 +33,7 @@ public class Game_manager : MonoBehaviour
 		menu.ActivateGameOverScreen();
 
 	}
+
 
 
     internal void updateScore(int v)
