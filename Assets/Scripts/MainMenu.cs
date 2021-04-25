@@ -25,15 +25,20 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         Time.timeScale = 1f;
+        Time.timeScale = 1f;
         menu.SetActive(false);
         gameManager.GetComponent<Game_manager>().newScore = 0;
         hud.enabled = true;
     }
-
+    public void ActivateGameOverScreen()
+    {
+        Time.timeScale = 0f;
+        gameOver.SetActive(true);
+    }
     public void GameOverToMenu()
     {
-        menu.SetActive(true);
-        gameOver.SetActive(false);
+        //Restart game when player press button
+        Application.LoadLevel(Application.loadedLevel);
     }
     // Update is called once per frame
     void Update()

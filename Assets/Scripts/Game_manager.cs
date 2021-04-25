@@ -7,7 +7,7 @@ public class Game_manager : MonoBehaviour
 	GameObject newScoreObject;
 	GameObject hightScoreObject;
 	public GameObject currentScoreObject;
-
+	public MainMenu menu;
 	public int highScore = 0;
 	public int newScore = 0;
 
@@ -22,27 +22,24 @@ public class Game_manager : MonoBehaviour
 	}
 	public void OnEndOfGame()
 	{
-		if (newScore > highScore)
-        {
-			highScore = newScore;
-        }
-		SaveScores();
-		newScoreObject.GetComponent<Text>().text = newScore.ToString();
+
+		
+		//newScoreObject.GetComponent<Text>().text = newScore.ToString();
 		if (newScore > highScore) {
 			highScore = newScore;
-			hightScoreObject.GetComponent<Text>().text = newScore.ToString();
+			//hightScoreObject.GetComponent<Text>().text = newScore.ToString();
 		}
-		Application.LoadLevel(Application.loadedLevel);
-		newScoreObject.GetComponent<Text>().text = "0";
-		newScore = 0;
+		SaveScores();
+		menu.ActivateGameOverScreen();
+		
+		//newScoreObject.GetComponent<Text>().text = "0";
+		//newScore = 0;
 	}
 
 	internal void updateScore(int v)
 	{
-		currentScoreObject.GetComponent<Text>().text = newScore.ToString();
 		newScore += v;
-
-
+		currentScoreObject.GetComponent<Text>().text = newScore.ToString();
 	}
 
 	void SaveScores()
