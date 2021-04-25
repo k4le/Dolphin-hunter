@@ -22,9 +22,14 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
-        
+        while (Vector3.Distance(player.transform.position,transform.position) < 30)
+        {
+            transform.position = new Vector3(transform.position.x,transform.position.y - 1,transform.position.z);
+        }
+
         movementSpeedFloat = Random.Range((int)movementSpeed[0] - 48, (int)movementSpeed[1] - 48);
         Wander();
     }
@@ -118,6 +123,15 @@ public class Enemy : MonoBehaviour
             } else {
                 spriteRenderer.flipX = false;
             }
+        }
+
+        if (angle < 90 && angle < 270)
+        {
+            //sDebug.Log("asdasd");
+            spriteRenderer.flipY = false;
+        }else
+        {
+            spriteRenderer.flipY = true;
         }
     }
 }
