@@ -7,18 +7,39 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject menu;
 
+    public GameObject gameOver;
+
+    GameObject gameManager;
+    public Canvas hud;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("gameManager");
         Time.timeScale = 0f;
+        gameOver.SetActive(false);
+
     }
 
     public void Play()
     {
         Time.timeScale = 1f;
+        Time.timeScale = 1f;
         menu.SetActive(false);
+        gameManager.GetComponent<Game_manager>().newScore = 0;
+        hud.enabled = true;
     }
-
+    public void ActivateGameOverScreen()
+    {
+        Time.timeScale = 0f;
+        gameOver.SetActive(true);
+    }
+    public void GameOverToMenu()
+    {
+        //Restart game when player press button
+        Application.LoadLevel(Application.loadedLevel);
+    }
     // Update is called once per frame
     void Update()
     {
