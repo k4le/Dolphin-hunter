@@ -17,7 +17,7 @@ public class fishMovement : MonoBehaviour
 		}
      
         movementSpeedFloat = Random.Range((int)movementSpeed[0] - 48, (int)movementSpeed[1] - 48);
-        Debug.Log(movementSpeedFloat);
+        //Debug.Log(movementSpeedFloat);
    
     }
 
