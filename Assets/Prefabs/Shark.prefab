@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f773b144f7d87d4980819a2e1e7ed61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRange: 15
+  sightRange: 40
   movementSpeed: 31003800
   status: 0
 --- !u!70 &2443267493557141903
